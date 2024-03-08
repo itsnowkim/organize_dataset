@@ -28,7 +28,7 @@ def read_csv_and_download_files(csv_file_name):
         csv_reader = csv.reader(file)
         for row in tqdm(csv_reader):
             # CSV 파일의 각 줄에서 이미지 파일 경로 추출
-            img_path = row[0]  # CSV 형식에 따라 조정이 필요할 수 있습니다.
+            img_path = row['imagepath']  # CSV 형식에 따라 조정이 필요할 수 있습니다.
             target_img_list.append(img_path)
             img_key = f"images/{img_path}"
             json_key = f"labels/{img_path.replace('.png', '.json')}"
