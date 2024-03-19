@@ -7,8 +7,8 @@ from tqdm import tqdm
 def set_label_id():
     # 각 클래스에 대응하는 label ID를 설정
     label_class = {
-        'Bone': 1, 'LF': 2, 'Vessel': 3, 'Fat': 4,
-        'SoftTissue': 5, 'Disc': 6, 'Instrument': 7,
+        'Bone': 0, 'LF': 1, 'Vessel': 2, 'Fat': 3,
+        'SoftTissue': 4, 'Dura': 5, 'Disc' : 6, 'Instrument': 7,
         'Cage': 8, 'Screw': 9, 'Care': 10, 'BF': 11
     }
 
@@ -19,6 +19,7 @@ def set_label_id():
         'Vessel': (0, 255, 0),  # 초록색
         'Fat': (255, 255, 0),  # 노란색
         'SoftTissue': (70,130,180),  # 청록색
+        'Dura' : (107, 102, 255), # 연한 보라색
         'Disc': (0, 0, 255),  # 파란색
         'Instrument': (119, 11, 32), # 어두운 자주색
         'Cage':(  0,  0, 70),  # 매우 어두운 파란색
@@ -37,8 +38,8 @@ def process_masking(json_file, label_class, class_colors, dest):
     # 빈 이미지 생성
     image_width = data['imageWidth']
     image_height = data['imageHeight']
-    gt_color_image = Image.new('RGB', (image_width, image_height), (0, 0, 0))
-    gt_label_image = Image.new('RGB', (image_width, image_height), (0, 0, 0))
+    gt_color_image = Image.new('RGB', (image_width, image_height), (255, 2556, 255))
+    gt_label_image = Image.new('RGB', (image_width, image_height), (255, 2556, 255))
     
     # 이미지에 polygon 적용
     draw_color = ImageDraw.Draw(gt_color_image)
