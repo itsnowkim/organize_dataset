@@ -7,9 +7,9 @@ from tqdm import tqdm
 def set_label_id():
     # 각 클래스에 대응하는 label ID를 설정
     label_class = {
-        'Bone': 0, 'LF': 1, 'Vessel': 2, 'Fat': 3,
-        'SoftTissue': 4, 'Disc': 5, 'Instrument': 6,
-        'Cage': 7, 'Screw': 8, 'Care': 9, 'BF': 10
+        'Bone': 1, 'LF': 2, 'Vessel': 3, 'Fat': 4,
+        'SoftTissue': 5, 'Disc': 6, 'Instrument': 7,
+        'Cage': 8, 'Screw': 9, 'Care': 10, 'BF': 11
     }
 
     # 각 클래스에 대한 색상을 정의 (R, G, B 형식)
